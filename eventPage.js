@@ -28,10 +28,10 @@ function updateTab() {
             sites = sites.sites
             domain = url.match(/:\/\/(www\.)?([^\/]+)\//).slice(-1)[0]
             if(domain in sites) {
-                chrome.browserAction.setIcon({path: 'icon-red.png'})
+                chrome.browserAction.setIcon({path: 'rsc/icon-red.png'})
             }
             else {
-                chrome.browserAction.setIcon({path: 'icon.png'})
+                chrome.browserAction.setIcon({path: 'rsc/icon.png'})
             }
         })
     })
