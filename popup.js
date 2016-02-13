@@ -32,9 +32,8 @@ getCurrentTabUrl(function(url) {
     chrome.storage.local.get("sites", function(sites){
         sites = sites.sites
         domain = url.match(/:\/\/([^\/]+)\//)[1]
-        console.log(domain)
         if(domain in sites) {
-            proxies = sites[url.match(/:\/\/(.+)\//)[1]]
+            proxies = sites[domain]
             $("#mirror").css("display", "block")
             $("#nomirror").css("display", "none")
             $("#mirror button").on("click", function() {
