@@ -1,13 +1,3 @@
-// Copyright (c) 2014 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-/**
- * Get the current URL.
- *
- * @param {function(string)} callback - called when the URL of the current tab
- *   is found.
- */
 function getCurrentTabUrl(callback) {
   // Query filter to be passed to chrome.tabs.query - see
   // https://developer.chrome.com/extensions/tabs#method-query
@@ -47,10 +37,16 @@ function getCurrentTabUrl(callback) {
   // alert(url); // Shows "undefined", because chrome.tabs.query is async.
 }
 
-function renderStatus(statusText) {
-  document.getElementById('status').textContent = statusText;
+function updateTab() {
+    getCurrentTabUrl(function(url) {
+        if(url.match(/:\/\/(.+)\//)[1] == "www.ijavn.org") {
+            chrome.browserAction.setIcon({path: 'icon-red.png'})
+        }
+        else {
+            chrome.browserAction.setIcon({path: 'icon.png'})
+        }
+    })
 }
 
-getCurrentTabUrl(function(url) {
-    renderStatus(url.match(/:\/\/(.+)\//)[1])
-})
+chrome.tabs.onActivated.addListener(updateTab)
+chrome.tabs.onUpdated.addListener(updateTab)
