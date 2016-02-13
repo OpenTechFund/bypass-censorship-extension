@@ -1,9 +1,8 @@
-sites_url = "sites.json"
+sites_url = "https://raw.githubusercontent.com/babolivier/collateral-freedom/master/sites.json"
 sites = {}
 
 function getSitesAndMirrors() {
-    $.getJSON("http://host.brendanabolivier.com/files/56bf24564ab24.json")
-                    .done(function(data) { chrome.storage.local.set({"sites": data}) })
+    $.getJSON(sites_url).done(function(data) { chrome.storage.local.set({"sites": data}) })
 }
 
 function getCurrentTabUrl(callback) {
@@ -49,7 +48,7 @@ function updateTab() {
     getCurrentTabUrl(function(url) {
         chrome.storage.local.get("sites", function(sites){
             sites = sites.sites
-            if(url.match(/:\/\/(.+)\//)[1] in sites) {
+            if(url.match(/:\/\/([^\/]+)\//)[1] in sites) {
                 chrome.browserAction.setIcon({path: 'icon-red.png'})
             }
             else {

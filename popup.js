@@ -31,7 +31,8 @@ function takeMeTo(url) {
 getCurrentTabUrl(function(url) {
     chrome.storage.local.get("sites", function(sites){
         sites = sites.sites
-        domain = url.match(/:\/\/(.+)\//)[1]
+        domain = url.match(/:\/\/([^\/]+)\//)[1]
+        console.log(domain)
         if(domain in sites) {
             proxies = sites[url.match(/:\/\/(.+)\//)[1]]
             $("#mirror").css("display", "block")
