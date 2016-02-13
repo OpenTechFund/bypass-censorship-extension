@@ -6,7 +6,7 @@ Extension for Chrome and Chromium
 This extension has been developped by [Brendan Abolivier](https://github.com/babolivier) and [Clément Salaün](https://github.com/altitude)
 during the **Collateral Freedom** hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and [An Daol Vras](http://lacantine-brest.net/).
 
-Its goal is to ease the access to the **Collateral Freedom** initiative, which replicates websites around the Web in order to make them available
+Its goal is to ease the access to the [**Collateral Freedom**](http://12mars.rsf.org/2015-en/) initiative, which replicates websites around the Web in order to make them available
 for everyone, including in the contries they're censored in.
 
 ## Howto
