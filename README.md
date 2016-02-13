@@ -12,8 +12,16 @@ for everyone, including in the contries they're censored in.
 The extension will add an icon next to your address bar. Most of the time, this icon will stay unchanged, and clicking it will show
 a message saying that no replication of the current tab's website has been set up by RWB.
 
+![Screenshot 1](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/sc3.png)
+
 When connecting (or trying to connect) to a website for which a replicated version has been set up by RWB, the extension's icon will turn
-red. Clicking on them will open a pop-up page with a button, which, if you click it, will bring you to the replicated website.
+red. Clicking on them will open a pop-up page with a button.
+
+![Screenshot 2](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/sc1.png)
+
+If you click the button, it will bring you to the replicated website.
+
+![Screenshot 3](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/sc2.png)
 
 ## Contribute
 
