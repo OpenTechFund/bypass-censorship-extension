@@ -1,3 +1,11 @@
+sites_url = "sites.json"
+sites = {}
+
+function getSitesAndMirrors() {
+    $.getJSON("http://host.brendanabolivier.com/files/56bf24564ab24.json")
+                                    .done(function(data) { sites = data })
+}
+
 function getCurrentTabUrl(callback) {
   // Query filter to be passed to chrome.tabs.query - see
   // https://developer.chrome.com/extensions/tabs#method-query
@@ -39,7 +47,7 @@ function getCurrentTabUrl(callback) {
 
 function updateTab() {
     getCurrentTabUrl(function(url) {
-        if(url.match(/:\/\/(.+)\//)[1] == "www.ijavn.org") {
+        if(url.match(/:\/\/(.+)\//)[1] in sites) {
             chrome.browserAction.setIcon({path: 'icon-red.png'})
         }
         else {
@@ -48,5 +56,6 @@ function updateTab() {
     })
 }
 
+chrome.runtime.onStartup.addListener(getSitesAndMirrors)
 chrome.tabs.onActivated.addListener(updateTab)
 chrome.tabs.onUpdated.addListener(updateTab)

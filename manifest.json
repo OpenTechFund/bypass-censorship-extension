@@ -11,11 +11,12 @@
     },
     "permissions": [
         "tabs",
-        "https://ajax.googleapis.com/"
+        "https://ajax.googleapis.com/",
+        "http://host.brendanabolivier.com/"
     ],
 
     "background": {
-        "scripts": ["eventPage.js"],
+        "scripts": ["jquery.js", "eventPage.js"],
         "persistent": false
     }
 }
