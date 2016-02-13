@@ -1,5 +1,44 @@
 {
     "www.ijavn.org": [
         "d1s66ldlhegqs2.cloudfront.net"
+    ],
+    "grani.ru": [
+        "d2i3c4yj91a1b5.cloudfront.net"
+    ],
+    "www.fergananews.com": [
+        "fg1.global.ssl.fastly.net"
+    ],
+    "www.thetibetpost.com": [
+        "tp1.global.ssl.fastly.net"
+    ],
+    "thetibetpost.com": [
+        "tp1.global.ssl.fastly.net"
+    ],
+    "danlambaovn.blogspot.fr": [
+        "dlb1.global.ssl.fastly.net"
+    ],
+    "mingjingnews.com": [
+        "mn1.global.ssl.fastly.net"
+    ],
+    "www.mingjingnews.com": [
+        "mn1.global.ssl.fastly.net"
+    ],
+    "www.cihpress.com": [
+        "hp1.global.ssl.fastly.net"
+    ],
+    "news.gooya.com": [
+        "gn1.global.ssl.fastly.net"
+    ],
+    "www.gc4hr.org": [
+        "gc1.global.ssl.fastly.net"
+    ],
+    "bahrainmirror.com": [
+        "bahrainmirror.global.ssl.fastly.net"
+    ],
+    "www.bahrainmirror.com": [
+        "bahrainmirror.global.ssl.fastly.net"
+    ],
+    "www.chrono-tm.org": [
+        "ctm1.global.ssl.fastly.net"
     ]
 }
