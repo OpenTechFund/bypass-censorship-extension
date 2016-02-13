@@ -57,5 +57,6 @@ function updateTab() {
 }
 
 chrome.runtime.onStartup.addListener(getSitesAndMirrors)
+chrome.runtime.onInstall.addListener(getSitesAndMirrors)
 chrome.tabs.onActivated.addListener(updateTab)
 chrome.tabs.onUpdated.addListener(updateTab)
