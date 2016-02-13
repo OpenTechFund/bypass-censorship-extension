@@ -3,7 +3,7 @@ sites = {}
 
 function getSitesAndMirrors() {
     $.getJSON("http://host.brendanabolivier.com/files/56bf24564ab24.json")
-                                    .done(function(data) { sites = data })
+                    .done(function(data) { chrome.storage.local.set({"sites": data}) })
 }
 
 function getCurrentTabUrl(callback) {
@@ -47,16 +47,19 @@ function getCurrentTabUrl(callback) {
 
 function updateTab() {
     getCurrentTabUrl(function(url) {
-        if(url.match(/:\/\/(.+)\//)[1] in sites) {
-            chrome.browserAction.setIcon({path: 'icon-red.png'})
-        }
-        else {
-            chrome.browserAction.setIcon({path: 'icon.png'})
-        }
+        chrome.storage.local.get("sites", function(sites){
+            sites = sites.sites
+            if(url.match(/:\/\/(.+)\//)[1] in sites) {
+                chrome.browserAction.setIcon({path: 'icon-red.png'})
+            }
+            else {
+                chrome.browserAction.setIcon({path: 'icon.png'})
+            }
+        })
     })
 }
 
 chrome.runtime.onStartup.addListener(getSitesAndMirrors)
-chrome.runtime.onInstall.addListener(getSitesAndMirrors)
+chrome.runtime.onInstalled.addListener(getSitesAndMirrors)
 chrome.tabs.onActivated.addListener(updateTab)
 chrome.tabs.onUpdated.addListener(updateTab)

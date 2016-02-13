@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "Collateral Freedom",
-    "description": "kthxbye",
+    "description": "Find mirrors for blocked websites",
     "version": "1.0",
 
     "browser_action": {
@@ -10,9 +10,8 @@
         "default_popup": "popup.html"
     },
     "permissions": [
-        "tabs",
-        "https://ajax.googleapis.com/",
-        "http://host.brendanabolivier.com/"
+        "storage",
+        "tabs"
     ],
 
     "background": {
