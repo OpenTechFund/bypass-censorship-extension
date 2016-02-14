@@ -17,7 +17,7 @@ a message saying that no replication of the current tab's website has been set u
 ![Screenshot 1](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/sc3.png)
 
 When connecting (or trying to connect) to a website for which a replicated version has been set up by RWB, the extension's icon will turn
-red. Clicking on them will open a pop-up page with a button.
+red. Clicking it will open a pop-up page with a button.
 
 ![Screenshot 2](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/sc1.png)
 
