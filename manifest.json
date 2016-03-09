@@ -3,7 +3,7 @@
 
     "name": "RSF Censorship Detector",
     "description": "Find access to blocked websites",
-    "version": "1.0",
+    "version": "1.1",
 
     "icons": {
         "128": "rsc/icon-128.png"
