@@ -1,4 +1,4 @@
-sites_url = "https://raw.githubusercontent.com/babolivier/collateral-freedom/master/sites.json"
+sites_url = "https://raw.githubusercontent.com/RSF-RWB/collateralfreedom/master/sites.json"
 sites = {}
 
 function getSitesAndMirrors() {
