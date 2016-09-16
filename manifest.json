@@ -10,6 +10,7 @@
     },
 
     "browser_action": {
+        "browser_style": false,
         "default_icon": "rsc/icon.png",
         "default_popup": "index.html"
     },
@@ -20,13 +21,12 @@
     ],
 
     "background": {
-        "scripts": ["jquery.js", "eventPage.js"],
-        "persistent": false
+        "scripts": ["jquery.js", "backgroundPage.js"]
     },
 
     "applications": {
         "gecko": {
-            "id": "collateralfreedom@brendanabolivier.com"
+            "id": "collateral-freedom@rsf.org"
         }
     }
 }
