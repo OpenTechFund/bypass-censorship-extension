@@ -22,5 +22,11 @@
     "background": {
         "scripts": ["jquery.js", "eventPage.js"],
         "persistent": false
+    },
+
+    "applications": {
+        "gecko": {
+            "id": "collateralfreedom@brendanabolivier.com"
+        }
     }
 }
