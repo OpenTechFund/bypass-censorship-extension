@@ -1,5 +1,5 @@
 # Collateral Freedom
-Extension for Chrome and Chromium
+Extension for Firefox. Sources for the Chrome and Chromium version can be found [here](https://github.com/babolivier/collateral-freedom).
 
 ![Logo](https://12mars.rsf.org/2015-en/wp-content/uploads/sites/12/2015/05/cropped-CollateralFreedom_logo_sans-baseline-01.png)
 
@@ -14,16 +14,16 @@ for everyone, including in the contries they're censored in.
 The extension will add an icon next to your address bar. Most of the time, this icon will stay unchanged, and clicking it will show
 a message saying that no replication of the current tab's website has been set up by RWB.
 
-![Screenshot 1](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/sc3.png)
+![Screenshot 1](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/firefox/sc1.png)
 
 When connecting (or trying to connect) to a website for which a replicated version has been set up by RWB, the extension's icon will turn
 red. Clicking it will open a pop-up page with a button.
 
-![Screenshot 2](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/sc1.png)
+![Screenshot 2](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/firefox/sc2.png)
 
 If you click the button, it will bring you to the replicated website.
 
-![Screenshot 3](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/sc2.png)
+![Screenshot 3](https://raw.githubusercontent.com/babolivier/collateral-freedom/master/screenshots/firefox/sc3.png)
 
 ## Contribute
 
