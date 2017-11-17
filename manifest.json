@@ -28,5 +28,7 @@
         "gecko": {
             "id": "collateral-freedom@rsf.org"
         }
-    }
+    },
+
+    "default_locale": "en"
 }

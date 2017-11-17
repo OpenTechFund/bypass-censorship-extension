@@ -1,0 +1,11 @@
+{
+    "mirror": {
+        "message": "This website may be blocked in your region."
+    },
+    "mirror-button": {
+        "message": "Take me to a mirror"
+    },
+    "nomirror": {
+        "message": "This website has no mirror provided by RWB"
+    }
+}
