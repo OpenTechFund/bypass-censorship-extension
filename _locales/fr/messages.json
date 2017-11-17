@@ -2,7 +2,7 @@
     "mirror": {
         "message": "Ce site est peut-être bloqué dans votre région."
     },
-    "mirror-button": {
+    "mirror.button": {
         "message": "Redirigez-moi vers un miroir"
     },
     "nomirror": {
