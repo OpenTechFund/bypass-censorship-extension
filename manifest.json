@@ -20,7 +20,14 @@
     ],
 
     "background": {
-        "scripts": ["jquery.js", "eventPage.js"],
-        "persistent": false
-    }
+        "scripts": ["jquery.js", "backgroundPage.js"]
+    },
+
+    "applications": {
+        "gecko": {
+            "id": "collateral-freedom@rsf.org"
+        }
+    },
+
+    "default_locale": "en"
 }
