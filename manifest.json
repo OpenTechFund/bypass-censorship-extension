@@ -20,7 +20,7 @@
     ],
 
     "background": {
-        "scripts": ["jquery.js", "backgroundPage.js"]
+        "scripts": ["libs/jquery.js", "backgroundPage.js"]
     },
 
     "applications": {
