@@ -1,5 +1,5 @@
 # Collateral Freedom
-Extension for Chrome and Chromium
+Extension for Chrome and Chromium. Sources for the Firefox version are available [here](https://github.com/babolivier/collateral-freedom/tree/firefox).
 
 ![Logo](https://12mars.rsf.org/2015-en/wp-content/uploads/sites/12/2015/05/cropped-CollateralFreedom_logo_sans-baseline-01.png)
 
