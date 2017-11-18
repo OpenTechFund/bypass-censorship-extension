@@ -4,7 +4,7 @@ Extension for Firefox. Sources for the Chrome and Chromium version can be found 
 ![Logo](https://12mars.rsf.org/2015-en/wp-content/uploads/sites/12/2015/05/cropped-CollateralFreedom_logo_sans-baseline-01.png)
 
 This extension has been developped by [Brendan Abolivier](https://github.com/babolivier) and [Clément Salaün](https://github.com/altitude)
-during the **Collateral Freedom** hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and [An Daol Vras](http://lacantine-brest.net/).
+during the **Collateral Freedom** hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and [An Daol Vras](http://lacantine-brest.net/). You can download it through the [GitHub releases](https://github.com/babolivier/collateral-freedom/releases) or the [Mozilla addons website](https://addons.mozilla.org/fr/firefox/addon/rsf-censorship-detector/).
 
 Its goal is to ease the access to the [**Collateral Freedom**](https://rsf.org/collateral-freedom) initiative, which replicates websites around the Web in order to make them available
 for everyone, including in the contries they're censored in.
