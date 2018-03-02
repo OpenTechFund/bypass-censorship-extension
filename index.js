@@ -21,7 +21,7 @@ function getCurrentTabUrl(callback) {
 
 // Redirect to mirror url
 function takeMeTo(url) {
-	updateProperties = {
+	let updateProperties = {
 			url: "https://" + url
 	}
 	chrome.tabs.update(updateProperties=updateProperties)
@@ -33,12 +33,14 @@ jQuery(document).ready(function() {
 	// about it and the button to redirect to a random mirror (if there's more than
 	// one).
 	getCurrentTabUrl(function(url) {
-		chrome.storage.local.get("sites", function(sites){
-			sites = sites.sites
+		chrome.storage.local.get("sites", function(localSites){
+			sites = localSites.sites
 			// Grab the domain part of the URL
-			domain = url.match(/:\/\/(www\.)?([^\/]+)\//).slice(-1)[0]
+			let domain = url.match(/:\/\/(www\.)?([^\/]+)\//).slice(-1)[0]
+			console.log(domain);
+			console.log(sites);
 			if(domain in sites) {
-				proxies = sites[domain]
+				let proxies = sites[domain]
 				// Offer the user to redirect them to a mirror
 				$("#mirror").css("display", "block")
 				$("#nomirror").css("display", "none")

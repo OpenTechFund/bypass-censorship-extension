@@ -1,6 +1,6 @@
-sites_url = "https://raw.githubusercontent.com/RSF-RWB/collateralfreedom/master/sites.json"
-sites = {}
-domain_regexp = /:\/\/(www\.)?([^\/]+)\//
+var sites_url = "https://raw.githubusercontent.com/RSF-RWB/collateralfreedom/master/sites.json"
+var sites = {}
+var domain_regexp = /:\/\/(www\.)?([^\/]+)\//
 
 // Retrieve the list of mirrors
 function getSitesAndMirrors() {
@@ -30,7 +30,7 @@ function updateTab() {
 			sites = sites.sites
 			if(url.match(domain_regexp)) {
 				// Skipping detection for about:* pages
-				domain = url.match(domain_regexp).slice(-1)[0]
+				let domain = url.match(domain_regexp).slice(-1)[0]
 				if(domain in sites) {
 					chrome.browserAction.setIcon({path: 'rsc/icon-red.png'})
 				}
