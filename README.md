@@ -2,7 +2,7 @@
 Extension for Firefox. Sources for the Chrome and Chromium version can be found [here](https://github.com/babolivier/collateral-freedom).
 
 This extension has been developped by [Brendan Abolivier](https://github.com/babolivier) and [Clément Salaün](https://github.com/altitude)
-during the **Collateral Freedom** hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and [An Daol Vras](http://lacantine-brest.net/). You can download it through the [GitHub releases](https://github.com/babolivier/collateral-freedom/releases) or the [Mozilla addons website](https://addons.mozilla.org/en-US/firefox/addon/rsf-censorship-detector/).
+during the **Collateral Freedom** hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and [An Daol Vras](http://lacantine-brest.net/). You can download it through the [GitHub releases](https://github.com/babolivier/rsf-censorship-detector/releases) or the [Mozilla addons website](https://addons.mozilla.org/en-US/firefox/addon/rsf-censorship-detector/).
 
 Its goal is to ease the access to the [**Collateral Freedom**](https://rsf.org/collateral-freedom) initiative, which replicates websites around the Web in order to make them available
 for everyone, including in the contries they're censored in.
@@ -25,7 +25,7 @@ If you click the button, it will bring you to the replicated website.
 
 ## Contribute
 
-If you want to contribute, please feel free to do so. The first thing to do may be to check [the repo's issues](https://github.com/babolivier/collateral-freedom/issues).
+If you want to contribute, please feel free to do so. The first thing to do may be to check [the repo's issues](https://github.com/babolivier/rsf-censorship-detector/issues).
 When you've found something to contribute on, just fork this repository, make your changes, and send a pull-request.
 
 ## About Collateral Freedom
