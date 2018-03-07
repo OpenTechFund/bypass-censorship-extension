@@ -1,5 +1,6 @@
-sites_url = "https://raw.githubusercontent.com/RSF-RWB/collateralfreedom/master/sites.json"
-sites = {}
+var sites_url = "https://raw.githubusercontent.com/RSF-RWB/collateralfreedom/master/sites.json"
+var sites = {}
+var domain_regexp = /:\/\/(www\.)?([^\/]+)\//
 
 function getSitesAndMirrors() {
     $.getJSON(sites_url).done(function(data) { chrome.storage.local.set({"sites": data}) })
@@ -26,7 +27,7 @@ function updateTab() {
     getCurrentTabUrl(function(url) {
         chrome.storage.local.get("sites", function(sites){
             sites = sites.sites
-            domain = url.match(/:\/\/(www\.)?([^\/]+)\//).slice(-1)[0]
+            let domain = url.match(domain_regexp).slice(-1)[0]
             if(domain in sites) {
                 chrome.browserAction.setIcon({path: 'rsc/icon-red.png'})
             }
