@@ -1,7 +1,5 @@
-# Collateral Freedom
+# RSF Censorship Detector
 Extension for Chrome and Chromium. Sources for the Firefox version are available [here](https://github.com/babolivier/collateral-freedom/tree/firefox).
-
-![Logo](https://12mars.rsf.org/2015-en/wp-content/uploads/sites/12/2015/05/cropped-CollateralFreedom_logo_sans-baseline-01.png)
 
 This extension has been developped by [Brendan Abolivier](https://github.com/babolivier) and [Clément Salaün](https://github.com/altitude)
 during the **Collateral Freedom** hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and [An Daol Vras](http://lacantine-brest.net/). You can download it through the [GitHub releases](https://github.com/babolivier/collateral-freedom/releases) or the [Chrome Web Store](https://chrome.google.com/webstore/detail/rsf-censorship-detector/dfccaccafebmbiblhjfbjlpcbodfmpmp).
