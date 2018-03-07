@@ -2,7 +2,7 @@
     "mirror": {
         "message": "This website may be blocked in your region."
     },
-    "mirror.button": {
+    "mirror_button": {
         "message": "Take me to a mirror"
     },
     "nomirror": {
