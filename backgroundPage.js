@@ -1,10 +1,10 @@
-var sites_url = "https://raw.githubusercontent.com/RSF-RWB/collateralfreedom/master/sites.json"
+var sites_url = "https://raw.githubusercontent.com/OpenTechFund/bypass-mirrors/master/mirrorSites.json"
 var sites = {}
 var domain_regexp = /:\/\/(www\.)?([^\/]+)\//
 
 // Retrieve the list of mirrors
 function getSitesAndMirrors() {
-	$.getJSON(sites_url).done(function(data) { chrome.storage.local.set({"sites": data}) })
+	$.getJSON(sites_url).done(function(data) { chrome.storage.local.set({"sites_list": data}) })
 }
 
 // Get the URL on the current tab
@@ -26,12 +26,15 @@ function getCurrentTabUrl(callback) {
 // indicate it to the user by turning the icon red.
 function updateTab() {
 	getCurrentTabUrl(function(url) {
-		chrome.storage.local.get("sites", function(sites){
-			sites = sites.sites
+		chrome.storage.local.get("sites_list", function(stored_sites){
+			sites = stored_sites.sites_list.sites
 			if(url.match(domain_regexp)) {
 				// Skipping detection for about:* pages
 				let domain = url.match(domain_regexp).slice(-1)[0]
-				if(domain in sites) {
+				let exists = sites.findIndex(function(item) {
+					return (domain === item.main_domain && item.available_mirrors.length > 0);
+				});
+				if(exists !== -1) {
 					chrome.browserAction.setIcon({path: 'rsc/icon-red.png'})
 				}
 				else {

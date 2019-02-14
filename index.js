@@ -33,14 +33,17 @@ jQuery(document).ready(function() {
 	// about it and the button to redirect to a random mirror (if there's more than
 	// one).
 	getCurrentTabUrl(function(url) {
-		chrome.storage.local.get("sites", function(localSites){
-			sites = localSites.sites
+		chrome.storage.local.get("sites_list", function(stored_sites){
+			sites = stored_sites.sites_list.sites
 			// Grab the domain part of the URL
 			let domain = url.match(/:\/\/(www\.)?([^\/]+)\//).slice(-1)[0]
 			console.log(domain);
 			console.log(sites);
-			if(domain in sites) {
-				let proxies = sites[domain]
+			let match = sites.find(function(item) {
+				return (domain === item.main_domain && item.available_mirrors.length > 0);
+			});
+			if(typeof match !== 'undefined') {
+				let proxies = match.available_mirrors;
 				// Offer the user to redirect them to a mirror
 				$("#mirror").css("display", "block")
 				$("#nomirror").css("display", "none")
