@@ -15,6 +15,10 @@
         "default_popup": "index.html"
     },
 
+    "options_ui": {
+        "page": "options.html"
+    },
+
     "permissions": [
         "storage",
         "tabs"
@@ -24,5 +28,11 @@
         "scripts": ["libs/jquery.js", "backgroundPage.js"]
     },
 
-    "default_locale": "en"
+    "default_locale": "en",
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{5dd64bbe-7c31-4ed8-8edf-d39252c0eaea}"
+        }
+    }
 }

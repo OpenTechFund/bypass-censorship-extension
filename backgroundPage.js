@@ -2,6 +2,19 @@ var sites_url = "https://raw.githubusercontent.com/OpenTechFund/bypass-mirrors/m
 var sites = {}
 var domain_regexp = /:\/\/(www\.)?([^\/]+)\//
 
+function onError(error) {
+  console.log(`Error: ${error}`);
+}
+
+function onGot(item) {
+  if (item.sites_url) {
+    sites_url = item.sites_url;
+  }
+}
+
+var getting = browser.storage.sync.get("sites_url");
+getting.then(onGot, onError);
+
 // Retrieve the list of mirrors
 function getSitesAndMirrors() {
 	$.getJSON(sites_url).done(function(data) { chrome.storage.local.set({"sites_list": data}) })
