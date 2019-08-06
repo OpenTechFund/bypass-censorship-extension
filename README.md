@@ -1,6 +1,6 @@
 # Bypass Censorship Extension
 
-Cross-browser extension for Firefox and Chrome that suggests available mirrors for sites that may be censored. This extension and its list of mirrors is curated by [BypassCensorship.org](https://bypasscensorship.org).
+Cross-browser extension for Firefox and Chrome that suggests available reverse-proxy urls and/or mirrors for sites that may be censored. This extension and its list of mirrors is curated by [BypassCensorship.org](https://bypasscensorship.org).
 
 This extension is a fork of the [RSF Censorship Detector](https://git.abolivier.bzh/babolivier/rsf-censorship-detector) extension developped by [Brendan Abolivier](https://github.com/babolivier) and [Clément Salaün](https://github.com/altitude) during the **Collateral Freedom** hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and [An Daol Vras](http://lacantine-brest.net/). To learn more about RSF's **Collateral Freedom** initiative, visit their site [here](https://rsf.org/collateral-freedom).
 
