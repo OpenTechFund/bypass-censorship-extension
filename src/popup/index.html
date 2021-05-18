@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="utf-8" />
 		<title>Collateral Freedom</title>
 		<style>
 			body {
@@ -17,14 +18,13 @@
 				margin-top: 10px;
 			}
 		</style>
-		<script src="libs/jquery.js"></script>
-		<script src="libs/l10n.js"></script>
-		<script src="index.js"></script>
+		<script type="module" src="./index.ts"></script>
 	</head>
 	<body>
-		<div id="mirror" style="display:none">__MSG_mirror__<br />
-				<button>__MSG_mirror_button__</button>
+		<div id="mirror" data-i18n="mirror">__MSG_mirror__<br />
+				<button id="mirror_button" data-i18n="mirror_button">__MSG_mirror_button__</button>
 		</div>
-		<div id="nomirror">__MSG_nomirror__</div>
+		<div id="nomirror" data-i18n="nomirror">__MSG_nomirror__</div>
+		<script type="module" src="../utils/localize.ts"></script>
 	</body>
 </html>
