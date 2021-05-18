@@ -2,53 +2,27 @@ import { browser } from 'webextension-polyfill-ts';
 import { getCurrentTabDomain } from '../utils/tabs';
 import { getCachedMirrors } from '../utils/mirrors';
 
-/**
- * Get the current URL.
- *
- * @param {function(string)} callback - called when the URL of the current tab
- * is found.
- */
-
-const isMirror = `body > #mirror {
-										display: block
-									}
-									#nomirror {
-										display: none
-									}`;
-
-const isNotMirror = `body > #mirror {
-										display: none
-									}
-									#nomirror {
-										display: block
-									}`;
-
 async function popup() {
 	const mirrors = await getCachedMirrors();
 	const domain = await getCurrentTabDomain();
+	const popup = document.getElementById('popup');
+	const message = document.createElement('div');
 	if (mirrors.has(domain)) {
-		console.log('***isMirror!***');
-		await browser.tabs.removeCSS({ code: isNotMirror });
-		await browser.tabs.insertCSS({ code: isMirror });
-		const all = document.querySelectorAll("html");
-		all.forEach(e => console.log(`***element***: ${e.id}`));
-		console.log('***all***:', all);
-		const elem = document.getElementById("mirror_button");
-		console.log('***elem***:', elem);
-		elem.addEventListener("click", async () => {
-			console.log('***domain***:', domain);
+		message.innerText = browser.i18n.getMessage('mirror');
+		const button = document.createElement('button');
+		button.innerText = browser.i18n.getMessage('mirror_button');
+		button.addEventListener("click", async () => {
 			const alts = mirrors.get(domain);
-			console.log('***alts***:', alts);
-			const proxies = alts.values().filter(item => item.proto === 'https');
+			const proxies = [...alts].filter(item => item.proto === 'https');
 			const proxy = proxies[Math.floor(Math.random() * proxies.length)];
 			await browser.tabs.update({ url: `${proxy.url}` });
 		})
+		popup.appendChild(message);
+		popup.appendChild(button);
 	} else {
-		console.log('***isNotMirror!***');
-		await browser.tabs.removeCSS({ code: isMirror });
-		await browser.tabs.insertCSS({ code: isNotMirror });
+		message.innerText = browser.i18n.getMessage('nomirror');
+		popup.appendChild(message);
 	}
 }
 
-popup();
-//document.addEventListener("DOMContentLoaded", popup);
+document.addEventListener("DOMContentLoaded", popup);

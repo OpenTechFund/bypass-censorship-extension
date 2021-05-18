@@ -2,16 +2,13 @@ import { String, Array, Record, Optional } from 'runtypes';
 import cache from 'webext-storage-cache';
 
 async function _fetchMirrors() {
-  console.log('***_fetchMirrors***');
   const { mirror_lists } = await window.options.getAll();
   const lists = mirror_lists.split(',');
   const map = new Map();
   await Promise.all(lists.map(async list => {
     let response;
-    console.log('***list***', list);
     try {
       response = await fetch(list);
-      console.log('***response***', response.status);
     } catch (error) {
       console.error(`Failed to fetch ${list}:`, error);
       return;
@@ -25,7 +22,6 @@ async function _fetchMirrors() {
     }
 
     try {
-      console.log('***response***', response);
       //response = List.check(response);
     } catch (error) {
       console.error(`Invalid list fetched from ${list}:`, error.message);
@@ -43,7 +39,6 @@ async function _fetchMirrors() {
       map.set(site.main_domain, set);
     }
   }));
-  console.log('***map***:', map);
   return map;
 }
 
