@@ -20,8 +20,14 @@ const redIcons = {
 // indicate it to the user by turning the icon red.
 async function updateButton() {
   const mirrors = await getCachedMirrors();
-  const domain = await getCurrentTabDomain();
-  if (mirrors.has(domain)) {
+	let domain: string;
+	try {
+		domain = await getCurrentTabDomain();
+		//console.log('***browser.storage.local***:', browser.storage.local.get('cached-mirrors'));
+	} catch (error) {
+		console.error('Failed to get tab domain:', error);
+	}
+  if (domain && mirrors && mirrors.has(domain)) {
     await browser.browserAction.setIcon({ path: redIcons })
   } else {
     await browser.browserAction.setIcon({ path: defaultIcons })

@@ -1,62 +1,57 @@
 {
-    "manifest_version": 2,
+  "manifest_version": 2,
 
-    "name": "bypass-censorship-extension",
-    "version": "1.2.0",
-    "description": "Find access to blocked websites",
-    "author": "Josh King <josh@throneless.tech>",
+  "name": "Bypass Censorship",
+  "version": "1.2.1",
+  "description": "Find access to blocked websites",
+  "author": "Josh King <josh@throneless.tech>",
 
-    "background": {
-      "scripts": [
-        "./src/background/options.ts",
-        "./src/background/index.ts"
-      ]
-    },
+  "background": {
+    "scripts": ["./src/background/index.ts"]
+  },
 
-    "options_ui": {
-      "page": "./src/options/index.html"
-    },
+  "icons": {
+    "16": "./src/icons/default/16.png",
+    "48": "./src/icons/default/48.png",
+    "96": "./src/icons/default/96.png",
+    "128": "./src/icons/default/128.png"
+  },
 
-    "icons": {
+  "browser_action": {
+    "default_popup": "./src/popup/index.html",
+    "default_icon": {
       "16": "./src/icons/default/16.png",
       "48": "./src/icons/default/48.png",
       "96": "./src/icons/default/96.png",
       "128": "./src/icons/default/128.png"
-    },
-
-    "browser_action": {
-      "default_popup": "./src/popup/index.html",
-      "default_icon": {
-        "16": "./src/icons/default/16.png",
-        "48": "./src/icons/default/48.png",
-        "96": "./src/icons/default/96.png",
-        "128": "./src/icons/default/128.png"
-      }
-    },
-
-    "permissions": [
-        "storage",
-        "activeTab",
-        "tabs",
-        "*://raw.githubusercontent.com/*"
-    ],
-
-    "web_accessible_resources": [
-        "./src/icons/green/16.png",
-        "./src/icons/green/48.png",
-        "./src/icons/green/96.png",
-        "./src/icons/green/128.png",
-        "./src/icons/red/16.png",
-        "./src/icons/red/48.png",
-        "./src/icons/red/96.png",
-        "./src/icons/red/128.png"
-    ],
-
-    "default_locale": "en",
-
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "{5dd64bbe-7c31-4ed8-8edf-d39252c0eaea}"
-        }
     }
+  },
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "*://raw.githubusercontent.com/*"
+  ],
+
+  "web_accessible_resources": [
+    "./src/icons/green/16.png",
+    "./src/icons/green/48.png",
+    "./src/icons/green/96.png",
+    "./src/icons/green/128.png",
+    "./src/icons/red/16.png",
+    "./src/icons/red/48.png",
+    "./src/icons/red/96.png",
+    "./src/icons/red/128.png"
+  ],
+
+  "default_locale": "en",
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{5dd64bbe-7c31-4ed8-8edf-d39252c0eaea}"
+    }
+  }
 }

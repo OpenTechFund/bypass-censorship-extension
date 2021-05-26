@@ -1,10 +1,10 @@
 {
   "name": "bypass-censorship-extension",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "Find access to blocked websites",
   "scripts": {
-    "build:dev": "parcel build manifest.json --target dev",
-    "build": "parcel build manifest.json --target prod",
+    "build:dev": "rimraf dist/dev && parcel build manifest.json --target dev",
+    "build": "rimraf dist/prod && parcel build manifest.json --target prod",
     "start:firefox": "web-ext run --source-dir ./dist/dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,8 +27,13 @@
     "url": "https://github.com/OpenTechFund/bypass-censorship-extension/issues"
   },
   "homepage": "https://github.com/OpenTechFund/bypass-censorship-extension#readme",
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.2%"
+  ],
   "devDependencies": {
-    "@parcel/config-webextension": "^2.0.0-nightly.2284",
+    "@parcel/config-webextension": "^2.0.0-beta.3.1",
     "@types/firefox-webext-browser": "^82.0.0",
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
@@ -42,7 +47,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "jest": "^26.6.3",
     "mockzilla": "^0.9.0",
-    "parcel": "^2.0.0-nightly.660",
+    "parcel": "^2.0.0-beta.3.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.6",
     "ts-node": "^9.1.1",
@@ -51,6 +56,7 @@
     "web-ext": "^6.1.0"
   },
   "dependencies": {
+    "array-from": "^2.1.1",
     "eslint_d": "^10.1.1",
     "runtypes": "^6.3.0",
     "webext-options-sync": "^2.0.1",

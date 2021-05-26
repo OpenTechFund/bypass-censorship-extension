@@ -27,6 +27,16 @@ When you've found something to contribute on, just fork this repository, make yo
 
 The list of mirrors is maintained in a separate repository found [here](https://github.com/OpenTechFund/bypass-mirrors). If you would like to add a new site or mirror to the list that this extension supports, just open an issue or pull request there.
 
+## Build
+
+To build the extension from source, run the command below:
+
+```
+npm run build
+```
+
+You'll find the built extension in the `dist/prod/` directory.
+
 ## License
 [<img src="https://www.gnu.org/graphics/agplv3-155x51.png" alt="AGPLv3" >](http://www.gnu.org/licenses/agpl-3.0.html)
 

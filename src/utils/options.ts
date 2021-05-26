@@ -2,7 +2,7 @@ import OptionsSync from 'webext-options-sync';
 
 const DEFAULT_MIRROR_LIST = 'https://raw.githubusercontent.com/OpenTechFund/bypass-mirrors/master/mirrorSites.json';
 
-window.options = new OptionsSync({
+const options = new OptionsSync({
 	defaults: {
 		mirror_lists: DEFAULT_MIRROR_LIST,
 	},
@@ -13,3 +13,5 @@ window.options = new OptionsSync({
 		OptionsSync.migrations.removeUnused
 	]
 });
+
+export { options };
