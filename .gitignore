@@ -1,3 +1,8 @@
+node_modules
+.cache
+.parcel-cache
+dist
 # Firefox WebExt artifacts and ID
 .web-extension-id
 web-ext-artifacts
+

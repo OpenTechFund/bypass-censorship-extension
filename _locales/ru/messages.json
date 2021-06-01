@@ -1,0 +1,11 @@
+{
+    "mirror": {
+        "message": "Этот сайт может быть заблокирован в вашем регионе."
+    },
+    "mirror_button": {
+        "message": "Хочу на сайт-зеркало"
+    },
+    "nomirror": {
+        "message": "У этого сайта нет зеркала от BypassCensorship.org"
+    }
+}
