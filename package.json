@@ -5,6 +5,8 @@
   "scripts": {
     "build:dev": "rimraf dist/dev && parcel build manifest.json --target dev",
     "build": "rimraf dist/prod && parcel build manifest.json --target prod",
+    "build:xpi": "rimraf dist/xpi && web-ext build --source-dir ./dist/prod --artifacts-dir ./dist/xpi",
+    "build:src": "rimraf dist/bypass-censorship-extension-src.zip && zip -r -FS ./dist/bypass-censorship-extension-src.zip * --exclude '*.git' 'node_modules/*' 'dist/*'",
     "start:firefox": "web-ext run --source-dir ./dist/dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
