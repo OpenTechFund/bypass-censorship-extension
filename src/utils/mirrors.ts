@@ -3,6 +3,8 @@ import { String, Array, Record, Optional } from 'runtypes';
 import cache from 'webext-storage-cache';
 import { options } from '../utils/options';
 
+const CACHE_DAYS = 1;
+
 function _replacer(key: string, value: unknown) {
   if(value instanceof Map) {
     return {
@@ -70,6 +72,9 @@ async function _fetchMirrors() {
 
 export async function getCachedMirrors(): Promise<Map<string, any>> {
   const mirrors = cache.function(_fetchMirrors, {
+    maxAge: {
+      days: CACHE_DAYS
+    },
     cacheKey: () => 'cached-mirrors'
   });
   return JSON.parse(await mirrors(), _reviver);
