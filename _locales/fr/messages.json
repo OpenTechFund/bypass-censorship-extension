@@ -1,11 +1,14 @@
 {
-    "mirror": {
-        "message": "Ce site est peut-être bloqué dans votre région."
-    },
-    "mirror_button": {
-        "message": "Redirigez-moi vers un miroir"
-    },
-    "nomirror": {
-        "message": "Ce site n'a aucun miroir proposé par BypassCensorship.org"
-    }
+  "mirror": {
+    "message": "Ce site est peut-être bloqué dans votre région."
+  },
+  "mirror_button": {
+    "message": "Redirigez-moi vers un miroir"
+  },
+  "nomirror": {
+    "message": "Ce site n'a aucun miroir proposé par BypassCensorship.org"
+  },
+  "issue": {
+    "message": "Report an issue in French"
+  }
 }

@@ -1,11 +1,14 @@
 {
-    "mirror": {
-        "message": "Этот сайт может быть заблокирован в вашем регионе."
-    },
-    "mirror_button": {
-        "message": "Хочу на сайт-зеркало"
-    },
-    "nomirror": {
-        "message": "У этого сайта нет зеркала от BypassCensorship.org"
-    }
+  "mirror": {
+    "message": "Этот сайт может быть заблокирован в вашем регионе."
+  },
+  "mirror_button": {
+    "message": "Хочу на сайт-зеркало"
+  },
+  "nomirror": {
+    "message": "У этого сайта нет зеркала от BypassCensorship.org"
+  },
+  "issue": {
+    "message": "Report an issue in Russian"
+  }
 }

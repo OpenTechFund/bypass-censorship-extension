@@ -1,11 +1,14 @@
 {
-    "mirror": {
-        "message": "This website may be blocked in your region."
-    },
-    "mirror_button": {
-        "message": "Take me to a mirror"
-    },
-    "nomirror": {
-        "message": "This website has no mirror provided by BypassCensorship.org"
-    }
+  "mirror": {
+    "message": "This website may be blocked in your region."
+  },
+  "mirror_button": {
+    "message": "Take me to a mirror"
+  },
+  "nomirror": {
+    "message": "This website has no mirror provided by BypassCensorship.org"
+  },
+  "issue": {
+    "message": "Report an issue"
+  }
 }
