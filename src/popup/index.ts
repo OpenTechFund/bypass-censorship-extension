@@ -20,20 +20,27 @@ async function popup() {
   }
   if (proxies.length > 0) {
     message.innerText = browser.i18n.getMessage('mirror');
-    const button = document.createElement('button');
-    button.classList.add('button');
-    button.innerText = browser.i18n.getMessage('mirror_button');
-    button.addEventListener('click', async () => {
+    const mirrorButton = document.createElement('button');
+    mirrorButton.classList.add('button');
+    mirrorButton.innerText = browser.i18n.getMessage('mirror_button');
+    mirrorButton.addEventListener('click', async () => {
       const proxy = proxies[Math.floor(Math.random() * proxies.length)];
       await browser.tabs.update({ url: `${proxy.url}` });
       window.close(); // TODO: won't work in Firefox Android
     });
     popup.appendChild(message);
-    popup.appendChild(button);
+    popup.appendChild(mirrorButton);
   } else {
     message.innerText = browser.i18n.getMessage('nomirror');
     popup.appendChild(message);
   }
+  const issueButton = document.createElement('button');
+  issueButton.classList.add('button', 'button-issue');
+  issueButton.innerText = browser.i18n.getMessage('issue');
+  issueButton.addEventListener('click', async () => {
+    console.log('button clicked...');
+  });
+  popup.appendChild(issueButton);
 }
 
 document.addEventListener('DOMContentLoaded', popup);
