@@ -37,8 +37,15 @@ async function popup() {
   const issueButton = document.createElement('button');
   issueButton.classList.add('button', 'button-issue');
   issueButton.innerText = browser.i18n.getMessage('issue');
-  issueButton.addEventListener('click', async () => {
-    console.log('button clicked...');
+  issueButton.addEventListener('click', () => {
+    const createData = {
+      type: 'detached_panel',
+      url: '../pages/report.html',
+      width: 50,
+      height: 300,
+    };
+    browser.windows.create(createData);
+    browser.history.deleteUrl({ url: createData.url });
   });
   popup.appendChild(issueButton);
 }
