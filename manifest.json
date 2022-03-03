@@ -43,7 +43,11 @@
     "./src/icons/red/16.png",
     "./src/icons/red/48.png",
     "./src/icons/red/96.png",
-    "./src/icons/red/128.png"
+    "./src/icons/red/128.png",
+    "./src/icons/purple/16.png",
+    "./src/icons/purple/48.png",
+    "./src/icons/purple/96.png",
+    "./src/icons/purple/128.png"
   ],
 
   "default_locale": "en",
