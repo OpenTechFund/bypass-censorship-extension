@@ -5,6 +5,9 @@
     "mirror_button": {
         "message": "Хочу на сайт-зеркало"
     },
+    "tor_button": {
+        "message": "Copy Tor browser URL (FIXME translate to RU)"
+    },
     "nomirror": {
         "message": "У этого сайта нет зеркала от BypassCensorship.org"
     }

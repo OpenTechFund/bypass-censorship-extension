@@ -5,6 +5,9 @@
     "mirror_button": {
         "message": "Take me to a mirror"
     },
+    "tor_button": {
+        "message": "Copy Tor browser URL"
+    },
     "nomirror": {
         "message": "This website has no mirror provided by BypassCensorship.org"
     }

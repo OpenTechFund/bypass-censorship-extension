@@ -5,6 +5,9 @@
     "mirror_button": {
         "message": "Redirigez-moi vers un miroir"
     },
+    "tor_button": {
+        "message": "Copy Tor browser URL (FIXME translate to FR)"
+    },
     "nomirror": {
         "message": "Ce site n'a aucun miroir proposé par BypassCensorship.org"
     }
