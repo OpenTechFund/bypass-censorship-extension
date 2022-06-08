@@ -1,22 +1,20 @@
 {
   "manifest_version": 2,
-
   "name": "Bypass Censorship",
   "version": "1.2.2",
   "description": "Find access to blocked websites",
   "author": "Josh King <josh@throneless.tech>",
-
   "background": {
-    "scripts": ["./src/background/index.ts"]
+    "scripts": [
+      "./src/background/index.ts"
+    ]
   },
-
   "icons": {
     "16": "./src/icons/default/16.png",
     "48": "./src/icons/default/48.png",
     "96": "./src/icons/default/96.png",
     "128": "./src/icons/default/128.png"
   },
-
   "browser_action": {
     "default_popup": "./src/popup/index.html",
     "default_icon": {
@@ -26,7 +24,6 @@
       "128": "./src/icons/default/128.png"
     }
   },
-
   "permissions": [
     "storage",
     "activeTab",
@@ -34,7 +31,6 @@
     "alarms",
     "*://raw.githubusercontent.com/*"
   ],
-
   "web_accessible_resources": [
     "./src/icons/green/16.png",
     "./src/icons/green/48.png",
@@ -49,11 +45,7 @@
     "./src/icons/purple/96.png",
     "./src/icons/purple/128.png"
   ],
-
   "default_locale": "en",
-
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
-
   "browser_specific_settings": {
     "gecko": {
       "id": "{5dd64bbe-7c31-4ed8-8edf-d39252c0eaea}"

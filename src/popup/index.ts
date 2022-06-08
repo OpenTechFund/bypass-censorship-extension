@@ -60,15 +60,16 @@ async function popup() {
         const torMessage = document.createElement('div');
         const torButton = document.createElement('button');
         const torDownload = document.createElement('button');
+        const copyMessage = document.createElement('div');
 			  torMessage.innerText = browser.i18n.getMessage('tor');
 			  torButton.innerText = browser.i18n.getMessage('tor_button');
 			  torDownload.innerText = browser.i18n.getMessage('tor_download');
 			  torButton.addEventListener('click', async () => {
 			  	const bridge = bridges[Math.floor(Math.random() * bridges.length)];
 			  	navigator.clipboard.writeText(bridge.url).then(function() {
-			  		popup.innerHTML += browser.i18n.getMessage('copy');
+			  		copyMessage.innerText = browser.i18n.getMessage('copy');
 			  	}, function() {
-			  		popup.innerHTML += browser.i18n.getMessage('copy_error');
+			  		copyMessage.innerText = browser.i18n.getMessage('copy_error');
 			  	});
 			  })
 			  torDownload.addEventListener('click', async () => {
@@ -78,6 +79,7 @@ async function popup() {
         popup.appendChild(torMessage);
 			  popup.appendChild(torDownload);
 			  popup.appendChild(torButton);
+			  popup.appendChild(copyMessage);
       }
     } else {
       message.innerText = browser.i18n.getMessage('nomirror');
