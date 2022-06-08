@@ -1,6 +1,8 @@
 import { getCurrentTabDomain } from '../utils/tabs';
 import { getCachedMirrors } from '../utils/mirrors';
 
+const TOR_DOWNLOAD_URL = "https://torproject.org/download"
+
 async function popup() {
   const mirrors = await getCachedMirrors();
   let domain: string;
@@ -13,6 +15,7 @@ async function popup() {
   const message = document.createElement('div');
   let hasMirror = false;
   let proxies = [];
+  let bridges = [];
   if (domain && mirrors) {
     let alts = [];
     hasMirror = mirrors.has(domain);
@@ -24,9 +27,10 @@ async function popup() {
 
     if (alts.length > 0) {
       proxies = [...alts].filter((item) => item.proto === 'https');
+      bridges = [...alts].filter(item => item.type === 'tor' || item.type === 'eotk');
     }
-    if (proxies.length > 0) {
-      if (hasMirror) {
+    if (proxies.length || bridges.length) {
+      if (hasMirror && proxies.length) {
         message.innerText = browser.i18n.getMessage('hasmirror');
         const button = document.createElement('button');
         button.innerText = browser.i18n.getMessage('hasmirror_button');
@@ -48,9 +52,32 @@ async function popup() {
         });
         popup.appendChild(message);
         popup.appendChild(button);
-      } else {
+      } else if (!bridges.length){
         message.innerText = browser.i18n.getMessage('onemirror');
-      popup.appendChild(message);
+        popup.appendChild(message);
+      }
+      if (bridges.length) {
+        const torMessage = document.createElement('div');
+        const torButton = document.createElement('button');
+        const torDownload = document.createElement('button');
+			  torMessage.innerText = browser.i18n.getMessage('tor');
+			  torButton.innerText = browser.i18n.getMessage('tor_button');
+			  torDownload.innerText = browser.i18n.getMessage('tor_download');
+			  torButton.addEventListener('click', async () => {
+			  	const bridge = bridges[Math.floor(Math.random() * bridges.length)];
+			  	navigator.clipboard.writeText(bridge.url).then(function() {
+			  		popup.innerHTML += browser.i18n.getMessage('copy');
+			  	}, function() {
+			  		popup.innerHTML += browser.i18n.getMessage('copy_error');
+			  	});
+			  })
+			  torDownload.addEventListener('click', async () => {
+          await browser.tabs.create({ url: `${TOR_DOWNLOAD_URL}` });
+          window.close(); // TODO: won't work in Firefox Android
+			  })
+        popup.appendChild(torMessage);
+			  popup.appendChild(torDownload);
+			  popup.appendChild(torButton);
       }
     } else {
       message.innerText = browser.i18n.getMessage('nomirror');

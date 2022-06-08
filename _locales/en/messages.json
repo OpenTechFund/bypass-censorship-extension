@@ -14,7 +14,22 @@
   "onemirror": {
     "message": "This is the only mirror available for this website."
   },
+  "tor": {
+    "message": "There is a Tor mirror available for this website."
+  },
+  "tor_button": {
+    "message": "Copy URL, then paste into Tor Browser"
+  },
+  "tor_download": {
+    "message": "Download and install Tor Browser"
+  },
   "nomirror": {
     "message": "This website has no mirror provided by BypassCensorship.org"
+  },
+  "copy": {
+    "message": "Copied!"
+  },
+  "copy_error": {
+    "message": "Could not copy text"
   }
 }
