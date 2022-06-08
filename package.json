@@ -4,10 +4,11 @@
   "description": "Find access to blocked websites",
   "scripts": {
     "build:dev": "rimraf dist/dev && parcel build manifest.json --target dev",
+    "build:watch": "rimraf dist/dev && parcel watch manifest.json --target dev",
     "build": "rimraf dist/prod && parcel build manifest.json --target prod",
     "build:xpi": "rimraf dist/xpi && web-ext build --source-dir ./dist/prod --artifacts-dir ./dist/xpi",
     "build:src": "rimraf dist/bypass-censorship-extension-src.zip && zip -r -FS ./dist/bypass-censorship-extension-src.zip * --exclude '*.git' 'node_modules/*' 'dist/*'",
-    "start:firefox": "web-ext run --source-dir ./dist/dev",
+    "start:firefox": "web-ext run --verbose --firefox=firefoxdeveloperedition --source-dir ./dist/dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "targets": {
@@ -35,35 +36,31 @@
     "> 0.2%"
   ],
   "devDependencies": {
-    "@parcel/config-webextension": "^2.0.0-beta.3.1",
-    "@types/firefox-webext-browser": "^82.0.0",
-    "@types/jest": "^26.0.23",
-    "@typescript-eslint/eslint-plugin": "^4.23.0",
-    "eslint": "^7.24.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-jest-formatting": "^3.0.0",
+    "@parcel/config-webextension": "^2.3.2",
+    "@types/jest": "^27.4.1",
+    "@types/webextension-polyfill": "^0.8.2",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-jest-formatting": "^3.1.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "jest": "^26.6.3",
-    "mockzilla": "^0.9.0",
-    "parcel": "^2.0.0-beta.3.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^27.5.1",
+    "mockzilla": "^0.12.0",
+    "parcel": "^2.3.2",
     "rimraf": "^3.0.2",
-    "ts-jest": "^26.5.6",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.4",
-    "typescript-eslint-language-service": "^4.1.4",
-    "web-ext": "^6.1.0"
+    "ts-jest": "^27.1.3",
+    "web-ext": "^6.7.0"
   },
   "dependencies": {
+    "@types/firefox-webext-browser": "^94.0.1",
     "array-from": "^2.1.1",
-    "eslint_d": "^10.1.1",
-    "runtypes": "^6.3.0",
-    "webext-options-sync": "^2.0.1",
-    "webext-storage-cache": "^4.2.0",
-    "webextension-polyfill-ts": "^0.25.0"
+    "runtypes": "^6.5.1",
+    "webext-options-sync": "^3.0.1",
+    "webext-storage-cache": "^5.0.0"
   },
   "prettier": {
     "printWidth": 80,

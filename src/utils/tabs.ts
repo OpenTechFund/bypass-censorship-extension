@@ -1,8 +1,14 @@
-import { browser } from 'webextension-polyfill-ts';
+export function getDomain(url: string) {
+  let domain = new URL(url);
+  return domain.hostname.replace('www.', '');
+} 
 
 export async function getCurrentTabUrl(): Promise<browser.tabs.Tab> {
   try {
-    const [tab] = await browser.tabs.query({ currentWindow: true, active: true })
+    const [tab] = await browser.tabs.query({
+      currentWindow: true,
+      active: true,
+    });
     console.assert(tab.url && typeof tab.url === 'string', 'Invalid tab URL.');
     return tab;
   } catch (error) {
@@ -19,6 +25,5 @@ export async function getCurrentTabDomain(): Promise<string | undefined> {
     console.error('Failed to get current tab domain!', error);
     throw error;
   }
-  const domain = tab.url.match(/:\/\/(www\.)?([^\/]+)\//);
-  return domain ? domain.slice(-1)[0] : undefined;
+  return getDomain(tab.url);
 }

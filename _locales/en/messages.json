@@ -1,11 +1,20 @@
 {
-    "mirror": {
-        "message": "This website may be blocked in your region."
-    },
-    "mirror_button": {
-        "message": "Take me to a mirror"
-    },
-    "nomirror": {
-        "message": "This website has no mirror provided by BypassCensorship.org"
-    }
+  "hasmirror": {
+    "message": "This website may be blocked in your region."
+  },
+  "hasmirror_button": {
+    "message": "Take me to a mirror"
+  },
+  "ismirror": {
+    "message": "There is another mirror available for this website."
+  },
+  "ismirror_button": {
+    "message": "Take me to a different mirror"
+  },
+  "onemirror": {
+    "message": "This is the only mirror available for this website."
+  },
+  "nomirror": {
+    "message": "This website has no mirror provided by BypassCensorship.org"
+  }
 }
