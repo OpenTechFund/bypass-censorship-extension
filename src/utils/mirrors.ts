@@ -2,7 +2,6 @@ import arrayFrom from 'array-from';
 import { Static, String, Array, Record, Optional } from 'runtypes';
 import cache from 'webext-storage-cache';
 import { options } from '../utils/options';
-import { getDomain } from '../utils/tabs';
 
 const CACHE_DAYS = 1;
 
@@ -37,7 +36,7 @@ class SiteMap extends Map {
     super(data);
     if (data) {
       for (const item of data) {
-        let [domain, sites] = item;
+        const [domain, sites] = item;
         for (const { url } of sites) {
           this.rev.set(url, domain);
         }
@@ -52,7 +51,7 @@ class SiteMap extends Map {
     super.set(key, value);
     //Site.check(value);
     for (const { url } of value) {
-      const domain = getDomain(url);
+      const domain = new URL(url).hostname;
       if (domain !== undefined) {
         this.rev.set(domain, key);
       }

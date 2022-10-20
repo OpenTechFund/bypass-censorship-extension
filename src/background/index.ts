@@ -1,4 +1,5 @@
-import { getCurrentTabDomain } from '../utils/tabs';
+import * as browser from 'webextension-polyfill';
+import { getCurrentTabUrl } from '../utils/tabs';
 import { getCachedMirrors } from '../utils/mirrors';
 
 const defaultIcons = {
@@ -22,23 +23,17 @@ const greenIcons = {
   '128': 'src/icons/green/128.png',
 };
 
-const purpleIcons = {
-  "16": "src/icons/purple/16.png",
-  "48": "src/icons/purple/48.png",
-  "96": "src/icons/purple/96.png",
-  "128": "src/icons/purple/128.png"
-};
-
 // Check if the URL on the current tab is bound to a list of mirrors. If so,
 // indicate it to the user by turning the icon red.
-async function updateButton() {
+async function updateButton(tabId: number) {
   const mirrors = await getCachedMirrors();
-  let domain: string;
+  let url: URL;
   try {
-    domain = await getCurrentTabDomain();
+    url = await getCurrentTabUrl();
   } catch (error) {
     console.error('Failed to get tab domain:', error);
   }
+  const domain = url.hostname.replace('www.', '')
   let hasMirror = false;
   let proxies = [];
   let bridges = [];
@@ -58,8 +53,9 @@ async function updateButton() {
   }
 
   if (hasMirror && bridges.length) {
-    await browser.browserAction.setIcon({ path: purpleIcons });
-  } else if (proxies.length) {
+    await browser.browserAction.setBadgeText({ text: "🧅", tabId });
+  }
+  if (proxies.length) {
     if (hasMirror) {
       await browser.browserAction.setIcon({ path: redIcons });
     } else {
@@ -73,5 +69,5 @@ async function updateButton() {
 
 // Run the updateTab() function on tab switch (Ctrl+Tab), creation or target
 // update
-browser.tabs.onActivated.addListener(updateButton);
+browser.tabs.onActivated.addListener(({ tabId }) => updateButton(tabId));
 browser.tabs.onUpdated.addListener(updateButton);

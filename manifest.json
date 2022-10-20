@@ -32,6 +32,10 @@
     "*://raw.githubusercontent.com/*"
   ],
   "web_accessible_resources": [
+    "./src/icons/default/16.png",
+    "./src/icons/default/48.png",
+    "./src/icons/default/96.png",
+    "./src/icons/default/128.png",
     "./src/icons/green/16.png",
     "./src/icons/green/48.png",
     "./src/icons/green/96.png",
@@ -39,11 +43,7 @@
     "./src/icons/red/16.png",
     "./src/icons/red/48.png",
     "./src/icons/red/96.png",
-    "./src/icons/red/128.png",
-    "./src/icons/purple/16.png",
-    "./src/icons/purple/48.png",
-    "./src/icons/purple/96.png",
-    "./src/icons/purple/128.png"
+    "./src/icons/red/128.png"
   ],
   "default_locale": "en",
   "browser_specific_settings": {
