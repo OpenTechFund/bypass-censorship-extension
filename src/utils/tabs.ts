@@ -6,7 +6,7 @@ export async function getCurrentTabUrl(): Promise<URL> {
       currentWindow: true,
       active: true,
     });
-    console.assert(tab.url && typeof tab.url === 'string', 'Invalid tab URL.');
+    console.assert(tab.url && typeof tab.url === 'string', `Invalid tab URL: ${tab.url}`);
     return new URL(tab.url);
   } catch (error) {
     console.error('Failed to get current tab URL!', error);

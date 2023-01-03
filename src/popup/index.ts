@@ -1,6 +1,7 @@
 import * as browser from 'webextension-polyfill';
 import { getCurrentTabUrl } from '../utils/tabs';
 import { getCachedMirrors } from '../utils/mirrors';
+import { fetchLink } from '../utils/link';
 
 const TOR_DOWNLOAD_URL = "https://torproject.org/download"
 
@@ -37,8 +38,10 @@ async function popup() {
         const button = document.createElement('button');
         button.innerText = browser.i18n.getMessage('hasmirror_button');
         button.addEventListener('click', async () => {
-          const proxy = proxies[Math.floor(Math.random() * proxies.length)];
-          url.hostname = new URL(proxy.url).hostname;
+          const proxy = await fetchLink(url);
+          console.error('proxy:', proxy);
+          //const proxy = proxies[Math.floor(Math.random() * proxies.length)];
+          url.hostname = new URL(proxy).hostname;
           await browser.tabs.update({ url: `${url.toString()}` });
           window.close(); // TODO: won't work in Firefox Android
         });

@@ -9,6 +9,10 @@
       "./src/background/index.ts"
     ]
   },
+  "options_ui": {
+    "page": "./src/options/index.html",
+    "browser_style": true
+  },
   "icons": {
     "16": "./src/icons/default/16.png",
     "48": "./src/icons/default/48.png",
@@ -29,7 +33,8 @@
     "activeTab",
     "tabs",
     "alarms",
-    "*://raw.githubusercontent.com/*"
+    "*://raw.githubusercontent.com/*",
+    "*://wxyz.page/*"
   ],
   "web_accessible_resources": [
     "./src/icons/default/16.png",

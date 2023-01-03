@@ -4,11 +4,12 @@
   "description": "Find access to blocked websites",
   "scripts": {
     "build:dev": "rimraf dist/dev && parcel build manifest.json --no-optimize --no-scope-hoist --no-content-hash --target dev",
-    "build:watch": "rimraf dist/dev && parcel watch manifest.json --host localhost --no-optimize --no-scope-hoist --no-content-hash --target dev",
+    "build:watch": "rimraf dist/dev && parcel watch manifest.json --host localhost --no-content-hash --target dev",
     "build": "rimraf dist/prod && parcel build manifest.json --target prod",
     "build:xpi": "rimraf dist/xpi && web-ext build --source-dir ./dist/prod --artifacts-dir ./dist/xpi",
     "build:src": "rimraf dist/bypass-censorship-extension-src.zip && zip -r -FS ./dist/bypass-censorship-extension-src.zip * --exclude '*.git' 'node_modules/*' 'dist/*'",
     "start:firefox": "web-ext run --verbose --firefox=firefoxdeveloperedition --source-dir ./dist/dev",
+    "lint": "web-ext lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "targets": {

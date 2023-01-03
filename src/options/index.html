@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css"/>
-  </head>
+<html lang="en">
 
-  <body>
-    <section>
-      <form id="options">
-	<div class="title">Mirror list URLs (one per line):</div>
-	<textarea name="mirror_lists" rows="10" cols="90"></textarea>
-      </form>
-    </section>
-    <script src="index.ts"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <form id="options">
+    <div class="browser-style">
+      <label for="mirror_lists">Mirror list URLs (one per line)</label>
+      <textarea class="browser-style" id="mirror_lists" name="Mirror Lists" rows="10" cols="90"></textarea>
+    </div>
+    <div class="browser-style">
+      <label for="key">API Key (Optional)</label>
+      <input type="text" id="key" name="API Key"></input>
+    </div>
+    <div class="browser-style">
+      <button class="browser-style" type="submit">Save</button>
+    </div>
+  </form>
+  <script type="module" src="index.ts"></script>
+</body>
+
 </html>

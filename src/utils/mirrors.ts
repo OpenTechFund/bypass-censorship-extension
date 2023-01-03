@@ -86,11 +86,6 @@ class SiteMap extends Map {
   }
 }
 
-
-
-
-
-
 function _replacer(key: string, value: unknown) {
   if (value instanceof Map || value instanceof SiteMap) {
     return {
