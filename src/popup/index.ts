@@ -34,10 +34,19 @@ async function popup() {
     }
     if (hasMirror) {
       const { click_copy }: { click_copy: boolean } = await options.getAll();
+      const tabs = await browser.tabs.query({ active: true, lastFocusedWindow: true });
       if (click_copy) {
-        const proxy = await fetchLink(url);
-        url.hostname = new URL(proxy).hostname;
-        navigator.clipboard.writeText(url.toString());
+        try {
+          const proxy = await fetchLink(url);
+          url.hostname = new URL(proxy).hostname;
+          await browser.runtime.sendMessage({ type: "copy-to-clipboard", content: url.toString() });
+          browser.browserAction.setBadgeText({ text: "✅", tabId: tabs[0].id });
+          browser.browserAction.setBadgeBackgroundColor({ color: null, tabId: tabs[0].id });
+        } catch (err) {
+          console.error('Error:', err);
+          browser.browserAction.setBadgeText({ text: "❌", tabId: tabs[0].id });
+          browser.browserAction.setBadgeBackgroundColor({ color: null, tabId: tabs[0].id });
+        }
         window.close();
       }
       message.innerText = browser.i18n.getMessage('hasmirror');

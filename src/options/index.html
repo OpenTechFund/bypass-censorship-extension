@@ -3,13 +3,14 @@
 <link rel="stylesheet" href="../../node_modules/webext-base-css/webext-base.css">
 <link rel="stylesheet" href="style.css">
 <form id="options">
-  <div>
-    <label for="key">API Key (Optional)</label>
-    <input type="text" id="key" name="key"></input>
-  </div>
-  <div>
-    <label for="click_copy">Copy mirror URL to clipboard on click</label>
+  <p>
+    <label for="key"><strong>__MSG_option_key__</strong></label>
+    <input type="password" id="key" name="key"></input>
+  </p>
+  <p>
+    <label for="click_copy"><strong>__MSG_option_copy_click__:</strong></label>
     <input type="checkbox" id="click_copy" name="click_copy"></input>
-  </div>
+  </p>
 </form>
 <script type="module" src="index.ts"></script>
+<script type="application/javascript" src="../utils/l10n.js"></script>

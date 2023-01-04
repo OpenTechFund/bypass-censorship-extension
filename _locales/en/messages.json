@@ -26,6 +26,12 @@
   "nomirror": {
     "message": "This website has no mirror provided by BypassCensorship.org"
   },
+  "option_key": {
+    "message": "API Key"
+  },
+  "option_copy_click": {
+    "message": "Copy mirror URL on click"
+  },
   "copy": {
     "message": "Copied!"
   },
