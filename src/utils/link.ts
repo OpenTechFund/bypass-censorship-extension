@@ -32,6 +32,8 @@ export async function fetchLink(url: URL) {
     throw new Error(`Invalid JSON fetched for ${url}`, { cause: err });
   }
 
-  await cache.set(result.url, true);
+  const result_url = new URL(result.url)
+  await cache.set(result_url.hostname.replace('www.', ''), true);
+  console.log(`Setting cache: ${result_url.hostname.replace('www.', '')}`)
   return result.url;
 }

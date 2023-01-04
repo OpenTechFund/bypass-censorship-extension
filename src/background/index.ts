@@ -1,4 +1,5 @@
 import * as browser from 'webextension-polyfill';
+import cache from 'webext-storage-cache';
 import { getCurrentTabUrl } from '../utils/tabs';
 import { getCachedMirrors } from '../utils/mirrors';
 
@@ -35,19 +36,17 @@ async function updateButton(tabId: number) {
   }
   const domain = url.hostname.replace('www.', '')
   let hasMirror = false;
-  let proxies = [];
+  let isMirror = false;
   let bridges = [];
   if (domain && mirrors) {
     let alts = [];
     hasMirror = mirrors.has(domain);
+    isMirror = await cache.has(domain);
     if (hasMirror) {
       alts = mirrors.get(domain);
-    } else if (mirrors.hasRev(domain)) {
-      alts = mirrors.getRev(domain);
     }
 
     if (alts.length) {
-      proxies = [...alts].filter((item) => item.proto === 'https');
       bridges = [...alts].filter(item => item.type === 'tor' || item.type === 'eotk');
     }
   }
@@ -55,13 +54,11 @@ async function updateButton(tabId: number) {
   if (hasMirror && bridges.length) {
     await browser.browserAction.setBadgeText({ text: "🧅", tabId });
   }
-  if (proxies.length) {
-    if (hasMirror) {
-      await browser.browserAction.setIcon({ path: redIcons });
-    } else {
-      // If we have proxies but we don't have mirrors, must already be a mirror
-      await browser.browserAction.setIcon({ path: greenIcons });
-    }
+  if (hasMirror) {
+    await browser.browserAction.setIcon({ path: redIcons });
+  } else if (isMirror) {
+    // If we have proxies but we don't have mirrors, must already be a mirror
+    await browser.browserAction.setIcon({ path: greenIcons });
   } else {
     await browser.browserAction.setIcon({ path: defaultIcons });
   }
@@ -71,3 +68,13 @@ async function updateButton(tabId: number) {
 // update
 browser.tabs.onActivated.addListener(({ tabId }) => updateButton(tabId));
 browser.tabs.onUpdated.addListener(updateButton);
+browser.browserAction.onClicked.addListener(async () => {
+  //const { click_copy }: { click_copy: boolean } = await options.getAll();
+  const click_copy = true;
+  console.error(`click_copy: ${click_copy}`);
+  if (click_copy) {
+    console.error("CLIPBOARD");
+  } else {
+    browser.browserAction.openPopup();
+  }
+})

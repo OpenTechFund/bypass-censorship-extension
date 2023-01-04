@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-</head>
-
-<body>
-  <form id="options">
-    <div class="browser-style">
-      <label for="mirror_lists">Mirror list URLs (one per line)</label>
-      <textarea class="browser-style" id="mirror_lists" name="Mirror Lists" rows="10" cols="90"></textarea>
-    </div>
-    <div class="browser-style">
-      <label for="key">API Key (Optional)</label>
-      <input type="text" id="key" name="API Key"></input>
-    </div>
-    <div class="browser-style">
-      <button class="browser-style" type="submit">Save</button>
-    </div>
-  </form>
-  <script type="module" src="index.ts"></script>
-</body>
-
-</html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../node_modules/webext-base-css/webext-base.css">
+<link rel="stylesheet" href="style.css">
+<form id="options">
+  <div>
+    <label for="key">API Key (Optional)</label>
+    <input type="text" id="key" name="key"></input>
+  </div>
+  <div>
+    <label for="click_copy">Copy mirror URL to clipboard on click</label>
+    <input type="checkbox" id="click_copy" name="click_copy"></input>
+  </div>
+</form>
+<script type="module" src="index.ts"></script>

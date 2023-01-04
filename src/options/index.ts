@@ -1,3 +1,4 @@
+import 'webext-base-css';
 import { options } from '../utils/options';
 
 async function loadOptions() {
