@@ -1,6 +1,6 @@
 {
   "name": "bypass-censorship-extension",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Find access to blocked websites",
   "scripts": {
     "build:dev": "rimraf dist/dev && parcel build manifest.json --no-optimize --no-scope-hoist --no-content-hash --target dev",
