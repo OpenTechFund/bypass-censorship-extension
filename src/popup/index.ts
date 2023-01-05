@@ -17,6 +17,7 @@ async function popup() {
   }
   const domain = url.hostname.replace('www.', '')
   const popup = document.getElementById('popup');
+  const mirror = document.createElement('p');
   const message = document.createElement('div');
   let hasMirror = false;
   let isMirror = false;
@@ -43,7 +44,7 @@ async function popup() {
           browser.browserAction.setBadgeText({ text: "✅", tabId: tabs[0].id });
           browser.browserAction.setBadgeBackgroundColor({ color: null, tabId: tabs[0].id });
         } catch (err) {
-          console.error('Error:', err);
+          console.error(err);
           browser.browserAction.setBadgeText({ text: "❌", tabId: tabs[0].id });
           browser.browserAction.setBadgeBackgroundColor({ color: null, tabId: tabs[0].id });
         }
@@ -58,8 +59,10 @@ async function popup() {
         await browser.tabs.update({ url: `${url.toString()}` });
         window.close(); // TODO: won't work in Firefox Android
       });
-      popup.appendChild(message);
-      popup.appendChild(button);
+      mirror.appendChild(message);
+      mirror.appendChild(button);
+      popup.appendChild(mirror);
+      const tor = document.createElement('p');
       const torMessage = document.createElement('div');
       const torButton = document.createElement('button');
       const torDownload = document.createElement('button');
@@ -80,10 +83,11 @@ async function popup() {
         await browser.tabs.create({ url: `${TOR_DOWNLOAD_URL}` });
         window.close(); // TODO: won't work in Firefox Android
       })
-      popup.appendChild(torMessage);
-      popup.appendChild(torDownload);
-      popup.appendChild(torButton);
-      popup.appendChild(copyMessage);
+      tor.appendChild(torMessage);
+      tor.appendChild(torDownload);
+      tor.appendChild(torButton);
+      tor.appendChild(copyMessage);
+      popup.appendChild(tor);
     } else if (isMirror) {
       message.innerText = browser.i18n.getMessage('onemirror');
       popup.appendChild(message);

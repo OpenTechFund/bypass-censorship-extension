@@ -3,7 +3,8 @@ body {
 	font-size: 100%;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	text-align:center;
+	text-align: center;
+  min-width: 500px;
 }
 button {
 	width: 100%;

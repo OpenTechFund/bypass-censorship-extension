@@ -17,7 +17,6 @@ export async function fetchLink(url: URL) {
 
   try {
     console.log(`Fetching mirror link for ${url}`);
-    console.debug(`Calling API at ${api_url}`);
     response = await fetch(api_url, { headers: { 'Content-Type': 'application/json' } });
     if (!response.ok) {
       throw new Error(`HTTP Error ${response.status}: ${response.statusText}`);
@@ -34,6 +33,6 @@ export async function fetchLink(url: URL) {
 
   const result_url = new URL(result.url)
   await cache.set(result_url.hostname.replace('www.', ''), true);
-  console.log(`Setting cache: ${result_url.hostname.replace('www.', '')}`)
+  console.debug(`Setting cache: ${result_url.hostname.replace('www.', '')}`)
   return result.url;
 }
