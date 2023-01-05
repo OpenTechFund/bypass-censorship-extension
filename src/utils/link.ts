@@ -10,7 +10,8 @@ export async function fetchLink(url: URL) {
   api_url.searchParams.append('url', url.href);
   if (key) {
     api_url.searchParams.append('key', key);
-    api_url.searchParams.append('type', 'short');
+    //api_url.searchParams.append('type', 'short');
+    api_url.searchParams.append('type', 'direct');
   } else {
     api_url.searchParams.append('type', 'direct');
   }
