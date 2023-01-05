@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Bypass Censorship",
-  "version": "1.3.0",
-  "description": "Find access to blocked websites",
+  "name": "__MSG_ext_name__",
+  "version": "2.0.0",
+  "description": "__MSG_ext_desc__",
   "author": "Josh King <josh@throneless.tech>",
   "background": {
     "scripts": [

@@ -1,4 +1,10 @@
 {
+  "ext_name": {
+    "message": "Bypass Censorship"
+  },
+  "ext_desc": {
+    "message": "Find access to blocked websites"
+  },
   "hasmirror": {
     "message": "This website may be blocked in your region."
   },
