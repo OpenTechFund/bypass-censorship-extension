@@ -1,4 +1,10 @@
 {
+  "ext_name": {
+    "message": "Contourner la Censure"
+  },
+  "ext_desc": {
+    "message": "Contourner la Censure"
+  },
   "hasmirror": {
     "message": "Ce site est peut-être bloqué dans votre région."
   },

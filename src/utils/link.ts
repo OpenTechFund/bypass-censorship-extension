@@ -10,8 +10,7 @@ export async function fetchLink(url: URL) {
   api_url.searchParams.append('url', url.href);
   if (key) {
     api_url.searchParams.append('key', key);
-    //api_url.searchParams.append('type', 'short');
-    api_url.searchParams.append('type', 'direct');
+    api_url.searchParams.append('type', 'short');
   } else {
     api_url.searchParams.append('type', 'direct');
   }
@@ -32,8 +31,10 @@ export async function fetchLink(url: URL) {
     throw new Error(`Invalid JSON fetched for ${url}`, { cause: err });
   }
 
-  const result_url = new URL(result.url)
-  await cache.set(result_url.hostname.replace('www.', ''), true);
-  console.debug(`Setting cache: ${result_url.hostname.replace('www.', '')}`)
+  if (!key) {
+    const result_url = new URL(result.url)
+    await cache.set(result_url.hostname.replace('www.', ''), true);
+    console.debug(`Setting cache: ${result_url.hostname.replace('www.', '')}`)
+  }
   return result.url;
 }

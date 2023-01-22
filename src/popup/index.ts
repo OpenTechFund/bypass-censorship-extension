@@ -34,13 +34,13 @@ async function popup() {
       bridges = [...alts].filter(item => item.type === 'tor' || item.type === 'eotk');
     }
     if (hasMirror) {
-      const { click_copy }: { click_copy: boolean } = await options.getAll();
+      const { key }: { key: string } = await options.getAll();
       const tabs = await browser.tabs.query({ active: true, lastFocusedWindow: true });
-      if (click_copy) {
+      if (key) {
         try {
           const proxy = await fetchLink(url);
-          url.hostname = new URL(proxy).hostname;
-          await browser.runtime.sendMessage({ type: "copy-to-clipboard", content: url.toString() });
+          //url.hostname = new URL(proxy).hostname;
+          await browser.runtime.sendMessage({ type: "copy-to-clipboard", content: proxy });
           browser.browserAction.setBadgeText({ text: "✅", tabId: tabs[0].id });
           browser.browserAction.setBadgeBackgroundColor({ color: null, tabId: tabs[0].id });
         } catch (err) {
@@ -55,8 +55,8 @@ async function popup() {
       button.innerText = browser.i18n.getMessage('hasmirror_button');
       button.addEventListener('click', async () => {
         const proxy = await fetchLink(url);
-        url.hostname = new URL(proxy).hostname;
-        await browser.tabs.update({ url: `${url.toString()}` });
+        //url.hostname = new URL(proxy).hostname;
+        await browser.tabs.update({ url: `${proxy}` });
         window.close(); // TODO: won't work in Firefox Android
       });
       mirror.appendChild(message);
