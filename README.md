@@ -10,9 +10,17 @@ This was originally a fork of the
 extension developped by [Brendan Abolivier](https://github.com/babolivier) and
 [Clément Salaün](https://github.com/altitude) during the **Collateral Freedom**
 hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and
-[An Daol Vras](http://lacantine-brest.net/). To learn more about RSF's
+[An Daol Vras](http://lacantine-brest.net/) but has since been completely rewritten. To learn more about RSF's
 **Collateral Freedom** initiative, visit their site
 [here](https://rsf.org/collateral-freedom).
+
+## Install
+
+Click one of the buttons below to install this extension for Chrome or Firefox.
+
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/gdbljocmlhlhlmlcakjmmjeledigpfdl?logo=googlechrome&style=for-the-badge)
+
+![Mozilla Add-on](https://img.shields.io/amo/v/bypass-censorship?logo=firefox&style=for-the-badge)
 
 ## Usage
 
@@ -41,11 +49,6 @@ be to check
 [the repo's issues](https://github.com/OpenTechFund/bypass-censorship-extension/issues).
 When you've found something to contribute on, just fork this repository, make
 your changes, and send a pull-request.
-
-The list of mirrors is maintained in a separate repository found
-[here](https://github.com/OpenTechFund/bypass-mirrors). If you would like to add
-a new site or mirror to the list that this extension supports, just open an
-issue or pull request there.
 
 ## Build
 
