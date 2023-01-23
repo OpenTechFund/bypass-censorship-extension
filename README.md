@@ -16,7 +16,7 @@ hackaton organised by [Reporters Without Borders](https://en.rsf.org/) and
 
 ## Install
 
-Click one of the buttons below to install this extension for Chrome or Firefox.
+Click one of the buttons below to install this extension for Chrome or Firefox. Afterwards, you can choose to pin the extension to your toolbar.
 
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/gdbljocmlhlhlmlcakjmmjeledigpfdl?logo=googlechrome&style=for-the-badge)
 
@@ -38,9 +38,25 @@ button.
 
 ![Screenshot 2](https://github.com/OpenTechFund/bypass-censorship-extension/raw/master/screenshots/chrome/sc2.png)
 
-If you click the button, it will bring you to the replicated website.
+If you click the button 'Take me to a mirror', it will bring you to the replicated website. (Alternatively, it also give you the option to use [Tor](https://torproject.org)).
 
 ![Screenshot 3](https://github.com/OpenTechFund/bypass-censorship-extension/raw/master/screenshots/chrome/sc3.png)
+
+The green icon means that you are currently on a mirror.
+
+## Short Links
+
+If you are a user that has been given an API key, you can use it to generate a special short link for any mirror URL and copy it to the clipboard. To enable that:
+
+1. Right-click the extension button and click *Manage extension*
+2. Scroll down the resulting page and click on *Extension options*
+3. Paste the API key in the resulting popup.
+
+![Screenshot 4](https://github.com/OpenTechFund/bypass-censorship-extension/raw/master/screenshots/chrome/sc4.png)
+
+Now going back, when you click on the extension button and a mirror is available, after a moment the button will display a checkmark and a short link directly to the mirrored page will be ready to paste from your clipboard.
+
+![Screenshot 5](https://github.com/OpenTechFund/bypass-censorship-extension/raw/master/screenshots/chrome/sc5.png)
 
 ## Contribute
 
