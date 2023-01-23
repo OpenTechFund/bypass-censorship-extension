@@ -38,7 +38,7 @@ button.
 
 ![Screenshot 2](https://github.com/OpenTechFund/bypass-censorship-extension/raw/master/screenshots/chrome/sc2.png)
 
-If you click the button 'Take me to a mirror', it will bring you to the replicated website. (Alternatively, it also give you the option to use [Tor](https://torproject.org)).
+If you click the button 'Take me to a mirror', it will bring you to the replicated website. (Alternatively, it also gives you the option to use [Tor](https://torproject.org)).
 
 ![Screenshot 3](https://github.com/OpenTechFund/bypass-censorship-extension/raw/master/screenshots/chrome/sc3.png)
 
