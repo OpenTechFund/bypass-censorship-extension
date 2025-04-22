@@ -1,3 +1,7 @@
+# <mark>Goodbye!...for now</mark>
+
+Hello, This project is temporarily, no longer being supported. We will archive this project. And keep you updated with any changes.
+
 # Bypass Censorship Extension
 
 Cross-browser extension for Firefox and Chrome that suggests available
